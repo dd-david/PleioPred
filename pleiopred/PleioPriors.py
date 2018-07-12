@@ -51,12 +51,12 @@ def generate_prior_bi(h5py_file1, h5py_file2, LDSC_results_file1, LDSC_results_f
 #    h5f1 = h5py.File('ref/Misc/GC1_GS7_Baseline53.h5','r')
 #    annot = h5f1['annot'][:]
 #    h5f1.close()
-    h5f2 = h5py.File('ref/Misc/1000G_SNP_info.h5','r')
+    h5f2 = h5py.File('ref/AnnotMatrix/1000G_SNP_info.h5','r')
     snp_chr = h5f2['snp_chr'][:]
     h5f2.close()
     ### get the snp list from h5py ###
     chromosomes_list = ['chrom_%d'%(x) for x in range(1,23)]
-    
+
     df1 = h5py.File(h5py_file1,'r')
     cord_data_g1 = df1['cord_data']
     df2 = h5py.File(h5py_file2,'r')
